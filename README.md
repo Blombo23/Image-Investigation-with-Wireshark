@@ -42,7 +42,7 @@ In order to view these PDF's I viewed the TCP stream as usual, and found the fil
 the hex data “25 50 44 46”. I noticed in the ascii view that the PDF data went until the very end of the TCP stream,
 so I copied all the hex date from the file signature onwards into HxD and saved it as a pdf file.
 
-<h2>Retrieve an hidden image in a text </h2>
+<h2>Retrieve an hidden image from a text file </h2>
 Task : <br/>
 - The user also accessed a file called "hiddenmessage2.txt"<br/>
 - What is the contents of this file? Include it in your report
