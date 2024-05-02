@@ -12,7 +12,7 @@ You have been provided with a packet capture file (pcap) containing all their re
 You must provide a report on everything you found, and document what processes / steps you followed to achieve this.
 
 <h2>Analyze a jpeg image </h2>
-<b>Task 1 :</b><br/>
+<b>Task 1:</b><br/>
 - anz-logo.jpg and bank-card.jpg are two images that show up in the users network traffic.<br/>
 - Extract these images from the pcap file and attach them to your report.<br/>
 
@@ -26,7 +26,7 @@ After finding the file signature “FFD8” the top, and the file footer “FFD9
 between those two points into the hex editor HxD and saved it as a jpg image.
 <br/><br/>
 
-<b>Task 2 :</b>
+<b>Task 2:</b>
 - The user accessed an image called "atm-image.jpg"
 - Identify what is different about this traffic and include everything in your report.
 
@@ -35,7 +35,7 @@ instead of one like in the previous tasks.<br/><br/>
 I tried extracting both sets of data, and got two different images. So the thing that is different about this traffic is that a single GET request performed by the user downloaded two images.
 <br/><br/>
 
-<b>Task 3 :</b>
+<b>Task 3:</b>
 - The network traffic shows that the user accessed the image "broken.png"
 - Extract and include the image in your report.
 
@@ -44,7 +44,7 @@ ascii form of the data, I recognized that the data was encoded in base64. Decryp
 tool resulted in png image data, which I copied into the “decoded text” section of HxD and saved as a png file.
 <br/><br/>
 
-<b>Task 4 :</b>
+<b>Task 4:</b>
 - The user also accessed a file called "hiddenmessage2.txt"
 - What is the contents of this file? Include it in your report
 
@@ -55,7 +55,7 @@ actually an image.
 
 
 <h2>Analyze content of a document </h2>
-<b>Task :</b><br/>
+<b>Task 1:</b><br/>
 - The user downloaded a suspicious document called "how-to-commit-crimes.docx"<br/>
 - Find the contents of this file and include it in your report.<br/>
 
