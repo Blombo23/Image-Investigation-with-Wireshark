@@ -12,9 +12,12 @@ You have been provided with a packet capture file (pcap) containing all their re
 You must provide a report on everything you found, and document what processes / steps you followed to achieve this.
 
 <h2>Analyze a jpeg image </h2>
-<b>Task 1 :</b>  <br/>
-- anz-logo.jpg and bank-card.jpg are two images that show up in the users network traffic.<br/>
-- Extract these images from the pcap file and attach them to your report.<br/><br/>
+<b>Task 1 :</b><br/>
+- anz-logo.jpg and bank-card.jpg are two images that show up in the users network traffic.
+<br/>
+- Extract these images from the pcap file and attach them to your report.
+<br/>
+
 To find the images, I followed the following process : 
 <br/><br/>
 First I filtered the packet capture for http traffic and looked through the remaining packets for the GET request
@@ -26,38 +29,39 @@ between those two points into the hex editor HxD and saved it as a jpg image.
 <br/><br/>
 
 <b>Task 2 :</b>
-- The user accessed an image called "atm-image.jpg"<br/>
-- Identify what is different about this traffic and include everything in your report.<br/><br/>
+- The user accessed an image called "atm-image.jpg"
+- Identify what is different about this traffic and include everything in your report.
+
 I viewed the TCP stream as normal when investigating this traffic, and found two sets of jpeg file signatures
-instead of one like in the previous tasks.<br/>
+instead of one like in the previous tasks.<br/><br/>
 I tried extracting both sets of data, and got two different images. So the thing that is different about this traffic is that a single GET request performed by the user downloaded two images.
 <br/><br/>
 
 <b>Task 3 :</b>
-- The network traffic shows that the user accessed the image "broken.png<br/>
+- The network traffic shows that the user accessed the image "broken.png"
 - Extract and include the image in your report.
-<br/><br/>
+
 The TCP stream for the broken.png traffic did not show any file signature for a png image. So while viewing the
 ascii form of the data, I recognized that the data was encoded in base64. Decrypting the base64 with an online
 tool resulted in png image data, which I copied into the “decoded text” section of HxD and saved as a png file.
+<br/><br/>
 
 <b>Task 4 :</b>
-- The user also accessed a file called "hiddenmessage2.txt"<br/>
+- The user also accessed a file called "hiddenmessage2.txt"
 - What is the contents of this file? Include it in your report
-<br/><br/>
-The TCP stream for the broken.png traffic did not show any file signature for a png image. So while viewing the
-ascii form of the data, I recognized that the data was encoded in base64. Decrypting the base64 with an online
-tool resulted in png image data, which I copied into the “decoded text” section of HxD and saved as a png file.
-<br/><br/>
+
 I viewed the TCP stream of this file, and noticed that instead of being plain text it was encoded data and when
 viewed as hex it had the same file signature as a jpg image.
 So I copied and saved the hex data with HxD as I have for other images, and discovered that the text file was
 actually an image.
+<br/><br/>
+
 
 
 <h2>Analyze content of a document </h2>
 <b>Task :</b>  <br/>
-- The user downloaded a suspicious document called "how-to-commit-crimes.docx"<br/>
+- The user downloaded a suspicious document called "how-to-commit-crimes.docx"
+<br/>
 - Find the contents of this file and include it in your report.
 <br/>
 In order to find the contents of the document, I had to view the TCP stream of the http get request for the file. The
@@ -71,10 +75,9 @@ documents contents were visible in the ascii view.
 In order to view these PDF's I viewed the TCP stream as usual, and found the file signature for a PDF, which was
 the hex data “25 50 44 46”. I noticed in the ascii view that the PDF data went until the very end of the TCP stream,
 so I copied all the hex date from the file signature onwards into HxD and saved it as a pdf file.
+<br/>
 
-<br/><br/>
-
-<b>Task 2:</b>  <br/>
+<b>Task 2:</b>
 - The user accessed one more document called securepdf.pdf
 - Access this document and include an image of the pdf in your report. Detail the steps to access it.
 <br/><br/>
