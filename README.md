@@ -12,7 +12,7 @@ You have been provided with a packet capture file (pcap) containing all their re
 You must provide a report on everything you found, and document what processes / steps you followed to achieve this.
 
 <h2>Retrieve a jpeg image </h2>
-Task : <br/>
+**Task 1 :** <br/>
 - anz-logo.jpg and bank-card.jpg are two images that show up in the users network traffic.<br/>
 - Extract these images from the pcap file and attach them to your report.<br/><br/>
 To find the images, I followed the following process : 
@@ -23,9 +23,25 @@ In the TCP stream I saw what looked like image data. In order to view the data i
 ‘raw’, and then searched the hex data for a jpeg’s file signature.<br/><br/>
 After finding the file signature “FFD8” the top, and the file footer “FFD9” at the bottom, I copied everything
 between those two points into the hex editor HxD and saved it as a jpg image.
+<br/><br/>
 
+Task 2 : <br/>
+- The user accessed an image called "atm-image.jpg"<br/>
+- Identify what is different about this traffic and include everything in your report.<br/><br/>
+I viewed the TCP stream as normal when investigating this traffic, and found two sets of jpeg file signatures
+instead of one like in the previous tasks.<br/>
+I tried extracting both sets of data, and got two different images. So the thing that is different about this traffic is that a single GET request performed by the user downloaded two images.
+<br/><br/>
 
-<h2>Retrieve content of document </h2>
+Task 3 : <br/>
+- The network traffic shows that the user accessed the image "broken.png<br/>
+- Extract and include the image in your report.
+<br/><br/>
+The TCP stream for the broken.png traffic did not show any file signature for a png image. So while viewing the
+ascii form of the data, I recognized that the data was encoded in base64. Decrypting the base64 with an online
+tool resulted in png image data, which I copied into the “decoded text” section of HxD and saved as a png file.
+
+<h2>Retrieve content of a document </h2>
 Task : <br/>
 - The user downloaded a suspicious document called "how-to-commit-crimes.docx"<br/>
 - Find the contents of this file and include it in your report.
